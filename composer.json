@@ -1,0 +1,20 @@
+{
+    "name": "diovanegabriel/random",
+    "description": "Generate random values",
+    "type": "library",
+    "require": {
+        "fzaninotto/faker": "^1.5"
+    },
+    "keywords": ["faker", "fixtures", "data"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Diovane Barbieri Gabriel"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Random\\": "src/Random"
+        }
+    }
+}
