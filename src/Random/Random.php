@@ -2,6 +2,8 @@
 
 namespace Random;
 
+use Faker;
+
 class Random
 {
 
@@ -28,9 +30,9 @@ class Random
         return $this->parameters;
     }
 
-    public static function getFaker($language = null)
+    public static function getFaker($language = 'pt_BR')
     {
-        return Faker\Factory::create($language ? $language : env('BRAZILIAN'));
+        return Faker\Factory::create($language);
     }
 
     public static function makeProbabilities(array $params)
