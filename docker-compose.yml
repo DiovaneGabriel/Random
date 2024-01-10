@@ -3,15 +3,9 @@ version: "3"
 services:
   php:
     image: diovanegabriel/php8.2-cli:latest
-    container_name: php-test
+    container_name: random-php-test
     command: php -S 0.0.0.0:8080 -t /var/www/html
     # ports:
     #   - "8080:8080"
     volumes:
       - ./:/var/www/html
-    networks:
-      - custom_network
-
-networks:
-  custom_network:
-    external: true

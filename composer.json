@@ -7,7 +7,7 @@
     },
     "keywords": ["faker", "fixtures", "data"],
     "license": "MIT",
-    "version": "v1.0.4",
+    "version": "v1.1.0",
     "authors": [
         {
             "name": "Diovane Barbieri Gabriel"
@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Random\\": "src/Random"
+            "DBarbieri\\Random\\": "src"
         }
     }
 }

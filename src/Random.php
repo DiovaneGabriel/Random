@@ -1,7 +1,8 @@
 <?php
 
-namespace Random;
+namespace DBarbieri\Random;
 
+use Exception;
 use Faker;
 
 class Random

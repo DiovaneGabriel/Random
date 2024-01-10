@@ -1,6 +1,9 @@
 <?php
+
+use DBarbieri\Random\Random;
+
 require __DIR__ . '/../vendor/autoload.php';
 
-$faker = Random\Random::getFaker();
+$faker = Random::getFaker();
 
-echo Random\Random::int(1, 1000) . "\n";
+echo Random::int(1, 1000) . "\n";
