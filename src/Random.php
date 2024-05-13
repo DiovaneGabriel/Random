@@ -147,19 +147,19 @@ class Random
 
     public static function name($country = null)
     {
-        $faker = self::getFaker($country ? $country : env('BRAZILIAN'));
+        $faker = self::getFaker($country ? $country : "pt_BR");
         return preg_replace('/(Sr\.|Sra\.|Dr\.|Mr\.|Mrs\.|Dra\.|Srta\.)\s/', '', $faker->name);
     }
 
     public static function cpf()
     {
-        $faker = self::getFaker(env('BRAZILIAN'));
+        $faker = self::getFaker("pt_BR");
         return preg_replace('/[^0-9]/', '', $faker->cpf);
     }
 
     public static function cep()
     {
-        $faker = self::getFaker(env('BRAZILIAN'));
+        $faker = self::getFaker("pt_BR");
         return preg_replace('/[^0-9]/', '', $faker->postcode);
     }
 }
