@@ -162,4 +162,14 @@ class Random
         $faker = self::getFaker("pt_BR");
         return preg_replace('/[^0-9]/', '', $faker->postcode);
     }
+
+    public static function uf()
+    {
+        $ufs = [
+            'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA',
+            'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN',
+            'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'
+        ];
+        return $ufs[self::int(0, count($ufs) - 1)];
+    }
 }
