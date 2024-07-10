@@ -172,4 +172,22 @@ class Random
         ];
         return $ufs[self::int(0, count($ufs) - 1)];
     }
+
+    public static function bairro()
+    {
+        $bairros = [
+            'Jardim Goiás', 'Pedro Ludovico', 'Marista',
+            'Nova Suíça', 'Jardim América', 'Parque Amazônia', 'Serrinha',
+            'Cidade Jardim', 'Bela Vista', 'Vila Redenção', 'Residencial Eldorado',
+            'Universitário', 'Jardim Guanabara', 'Vila Nova', 'Conjunto Vera Cruz',
+            'Jardim Presidente', 'Parque Atheneu', 'Garavelo', 'Cidade Jardim',
+            'Vila Maria', 'Campinas', 'Criméia Oeste', 'Faiçalville', 'Jaó',
+            'Leste Universitário', 'Nova Vila', 'Santa Genoveva', 'Aeroporto',
+            'Coimbra', 'Bueno', 'Pedro Ludovico', 'Marista', 'Sul', 'Nova Suíça',
+            'Jardim América', 'Parque Amazônia', 'Vila União', 'Bacacheri', 'Cabral',
+            'Água Verde', 'Mercês', 'Champagnat', 'Bigorrilho', 'Santa Felicidade',
+            'Campo Comprido', 'Juvevê', 'Vila Maria', 'Residencial Eldorado', 'Vila Redenção'
+        ];
+        return $bairros[self::int(0, count($bairros) - 1)];
+    }
 }
