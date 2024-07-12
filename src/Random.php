@@ -157,6 +157,39 @@ class Random
         return preg_replace('/[^0-9]/', '', $faker->cpf);
     }
 
+    public static function cnpj()
+    {
+        $cnpj = '';
+
+        for ($i = 0; $i < 8; $i++) {
+            $cnpj .= rand(0, 9);
+        }
+
+        $cnpj .= "0001";
+
+        $weights1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+        $sum1 = 0;
+        for ($i = 0; $i < 12; $i++) {
+            $sum1 += $cnpj[$i] * $weights1[$i];
+        }
+        $remainder1 = $sum1 % 11;
+        $digit1 = $remainder1 < 2 ? 0 : 11 - $remainder1;
+
+        $cnpj .= $digit1;
+
+        $weights2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+        $sum2 = 0;
+        for ($i = 0; $i < 13; $i++) {
+            $sum2 += $cnpj[$i] * $weights2[$i];
+        }
+        $remainder2 = $sum2 % 11;
+        $digit2 = $remainder2 < 2 ? 0 : 11 - $remainder2;
+
+        $cnpj .= $digit2;
+
+        return $cnpj;
+    }
+
     public static function cep()
     {
         $faker = self::getFaker("pt_BR");
