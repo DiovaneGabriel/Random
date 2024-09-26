@@ -145,6 +145,11 @@ class Random
         return $countValues ? $values[mt_rand(0, $countValues - 1)] : false;
     }
 
+    public static function latLong(int $min = -180, int $max = 180)
+    {
+        return self::int($min * 100000, $max * 100000) / 100000;
+    }
+
     public static function name($country = null)
     {
         $faker = self::getFaker($country ? $country : "pt_BR");
@@ -199,9 +204,33 @@ class Random
     public static function uf()
     {
         $ufs = [
-            'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA',
-            'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN',
-            'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'
+            'AC',
+            'AL',
+            'AP',
+            'AM',
+            'BA',
+            'CE',
+            'DF',
+            'ES',
+            'GO',
+            'MA',
+            'MT',
+            'MS',
+            'MG',
+            'PA',
+            'PB',
+            'PR',
+            'PE',
+            'PI',
+            'RJ',
+            'RN',
+            'RS',
+            'RO',
+            'RR',
+            'SC',
+            'SP',
+            'SE',
+            'TO'
         ];
         return $ufs[self::int(0, count($ufs) - 1)];
     }
@@ -209,17 +238,55 @@ class Random
     public static function bairro()
     {
         $bairros = [
-            'Jardim Goiás', 'Pedro Ludovico', 'Marista',
-            'Nova Suíça', 'Jardim América', 'Parque Amazônia', 'Serrinha',
-            'Cidade Jardim', 'Bela Vista', 'Vila Redenção', 'Residencial Eldorado',
-            'Universitário', 'Jardim Guanabara', 'Vila Nova', 'Conjunto Vera Cruz',
-            'Jardim Presidente', 'Parque Atheneu', 'Garavelo', 'Cidade Jardim',
-            'Vila Maria', 'Campinas', 'Criméia Oeste', 'Faiçalville', 'Jaó',
-            'Leste Universitário', 'Nova Vila', 'Santa Genoveva', 'Aeroporto',
-            'Coimbra', 'Bueno', 'Pedro Ludovico', 'Marista', 'Sul', 'Nova Suíça',
-            'Jardim América', 'Parque Amazônia', 'Vila União', 'Bacacheri', 'Cabral',
-            'Água Verde', 'Mercês', 'Champagnat', 'Bigorrilho', 'Santa Felicidade',
-            'Campo Comprido', 'Juvevê', 'Vila Maria', 'Residencial Eldorado', 'Vila Redenção'
+            'Jardim Goiás',
+            'Pedro Ludovico',
+            'Marista',
+            'Nova Suíça',
+            'Jardim América',
+            'Parque Amazônia',
+            'Serrinha',
+            'Cidade Jardim',
+            'Bela Vista',
+            'Vila Redenção',
+            'Residencial Eldorado',
+            'Universitário',
+            'Jardim Guanabara',
+            'Vila Nova',
+            'Conjunto Vera Cruz',
+            'Jardim Presidente',
+            'Parque Atheneu',
+            'Garavelo',
+            'Cidade Jardim',
+            'Vila Maria',
+            'Campinas',
+            'Criméia Oeste',
+            'Faiçalville',
+            'Jaó',
+            'Leste Universitário',
+            'Nova Vila',
+            'Santa Genoveva',
+            'Aeroporto',
+            'Coimbra',
+            'Bueno',
+            'Pedro Ludovico',
+            'Marista',
+            'Sul',
+            'Nova Suíça',
+            'Jardim América',
+            'Parque Amazônia',
+            'Vila União',
+            'Bacacheri',
+            'Cabral',
+            'Água Verde',
+            'Mercês',
+            'Champagnat',
+            'Bigorrilho',
+            'Santa Felicidade',
+            'Campo Comprido',
+            'Juvevê',
+            'Vila Maria',
+            'Residencial Eldorado',
+            'Vila Redenção'
         ];
         return $bairros[self::int(0, count($bairros) - 1)];
     }
