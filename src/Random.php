@@ -117,18 +117,24 @@ class Random
 
     public static function float($min, $max, $precision = 2)
     {
-        $precision = pow(10, $precision);
-        return mt_rand($min, $max * $precision) / $precision;
+        $factor = pow(10, $precision);
+        return mt_rand($min * $factor, $max * $factor) / $factor;
     }
 
     public static function money($min, $max, $multipleOf = null)
     {
-        $value = self::float($min, $max, is_numeric($multipleOf) ? 0 : 2);
         if (is_numeric($multipleOf) && $multipleOf > 0) {
-            $value = round($value / $multipleOf) * $multipleOf;
+            $minMultiple = ceil($min / $multipleOf);
+            $maxMultiple = floor($max / $multipleOf);
+
+            if ($minMultiple > $maxMultiple) {
+                return null;
+            }
+
+            return mt_rand($minMultiple, $maxMultiple) * $multipleOf;
         }
 
-        return $value;
+        return self::float($min, $max, 2);
     }
 
     public static function janKenPon(array $params)
